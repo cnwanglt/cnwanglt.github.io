@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="SAC,Linux," />
 
 
 
@@ -79,13 +79,21 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="My Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="本文参考seisman之前整理的安装说明，并在此安装方法的基础上补充了本人在安装过程中所遇到的问题，希望对大家有所帮助。">
+<meta name="keywords" content="SAC,Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何在Linux中安装和配置SAC（Seismic Analysis code）">
+<meta property="og:url" content="http://yoursite.com/2018/01/30/如何在Linux中p安装和配置SAC（Seismic-Analysis-code/index.html">
 <meta property="og:site_name" content="My Blog">
+<meta property="og:description" content="本文参考seisman之前整理的安装说明，并在此安装方法的基础上补充了本人在安装过程中所遇到的问题，希望对大家有所帮助。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/01/30/如何在Linux中p安装和配置SAC（Seismic-Analysis-code/1.JPG">
+<meta property="og:image" content="http://yoursite.com/2018/01/30/如何在Linux中p安装和配置SAC（Seismic-Analysis-code/2.JPG">
+<meta property="og:updated_time" content="2018-01-30T02:24:27.252Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My Blog">
+<meta name="twitter:title" content="如何在Linux中安装和配置SAC（Seismic Analysis code）">
+<meta name="twitter:description" content="本文参考seisman之前整理的安装说明，并在此安装方法的基础上补充了本人在安装过程中所遇到的问题，希望对大家有所帮助。">
+<meta name="twitter:image" content="http://yoursite.com/2018/01/30/如何在Linux中p安装和配置SAC（Seismic-Analysis-code/1.JPG">
 
 
 
@@ -115,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/30/如何在Linux中p安装和配置SAC（Seismic-Analysis-code/"/>
 
 
 
 
 
-  <title>My Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>如何在Linux中安装和配置SAC（Seismic Analysis code） | My Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -140,8 +148,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left 
-  page-home">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/you"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -244,9 +251,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -276,9 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/30/如何在Linux中p安装和配置SAC（Seismic-Analysis-code/" itemprop="url">如何在Linux中安装和配置SAC（Seismic Analysis code）</a></h1>
+          <h1 class="post-title" itemprop="name headline">如何在Linux中安装和配置SAC（Seismic Analysis code）</h1>
         
 
         <div class="post-meta">
@@ -350,16 +355,41 @@
       
 
       
-        
-          <p>本文参考seisman之前整理的安装说明，并在此安装方法的基础上补充了本人在安装过程中所遇到的问题，希望对大家有所帮助。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/30/如何在Linux中p安装和配置SAC（Seismic-Analysis-code/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <p>本文参考seisman之前整理的安装说明，并在此安装方法的基础上补充了本人在安装过程中所遇到的问题，希望对大家有所帮助。</p>
+<a id="more"></a> 
+<p>感谢<a href="http://seisman.info/sac-manual.html" target="_blank" rel="noopener">SAC参考手册中文版-Seisman</a>  本安装方法中大多数内容出自这里，当然，我也添加了部分我自己所遇到的问题，仅供参考。</p>
+<hr>
+<h2 id="申请SAC"><a href="#申请SAC" class="headerlink" title="申请SAC"></a>申请SAC</h2><p>Seismic Analysis Code 是一款开源的，配置在Linux上面进行使用的软件包，同时也是天然地震学领域使用最广泛的数据分析软件包之一。</p>
+<p>第一步我们需要在iris社区申请软件包(<a href="http://ds.iris.edu/ds/nodes/dmc/forms/sac/" target="_blank" rel="noopener">这里是软件包申请地址</a>)</p>
+<p>认真填写个人信息，尤其注意Email那一栏，需要填写单位邮箱。如果使用QQ、163这样的邮箱很容易被直接拒绝。如果没有单位邮箱，需要提供其他信息来辅助验证你的身份。</p>
+<p>我在网站申请的是Linux_64位版本。<br>如果你在申请时选择了多个版本，对方的工作人员会想你询问为何你会同时用到这些（别问我怎么知道的）。</p>
+<p>申请提交之后，需等待两三个工作日的审核，没什么问题的话就可以通过邮箱收到软件包了。</p>
+<hr>
+<h2 id="配置安装环境与安装"><a href="#配置安装环境与安装" class="headerlink" title="配置安装环境与安装"></a>配置安装环境与安装</h2><p>Linux 下安装软件最麻烦的一个问题就是软件之间的依赖关系。</p>
+<p>对于我的ubuntu系统：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install build-essential </span><br><span class="line">$ sudo apt-get install libncurses5-dev libsm-dev libice-dev \ libxpm-dev libx11-dev zlib1g-dev</span><br></pre></td></tr></table></figure>
+<p>随后解压安装软件包和配置变量</p>
+<p>解压sac软件包：<br>将软件包放置在HOME文件夹下，并输入命令行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tar -zxvf sac-101.6a-linux_x86_64.tar.gz</span><br></pre></td></tr></table></figure>
+<p>这时在你的home目录下会出现一个文件夹sac，然后将其拷贝到你想要进行安装的位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo cp -r sac \usr\local\</span><br></pre></td></tr></table></figure>
+<p>然后向~/.bashrc中加入如下语句以配置环境变量和SAC全局变量</p>
+<p>首先使用vi编辑器打开需要编辑的文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p>然后在文件中添加以下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">#配置SAC环境变量 </span><br><span class="line"> #SACHOME为 SAC 的安装目录</span><br><span class="line"> #SACAUX中包含了 SAC 运行所需的辅助文件</span><br><span class="line"> #PATH为 Linux 系统环境变量 </span><br><span class="line"> export SACHOME=/usr/local/sac </span><br><span class="line"> export SACAUX=$SACHOME/aux </span><br><span class="line"> export PATH=$SACHOME/bin:$PATH</span><br></pre></td></tr></table></figure>
+<p>输入完成后按ESC键进入命令控制模式，输入:x!保存并退出vi编辑器，退回到上一界面。<br>执行以下命令使配置的环境变量生效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ source ~\.bashrc</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="启动SAC"><a href="#启动SAC" class="headerlink" title="启动SAC"></a>启动SAC</h2><p>终端键入小写的sac，显示如下则表示安装成功</p>
+<img src="/2018/01/30/如何在Linux中p安装和配置SAC（Seismic-Analysis-code/1.JPG" title="安装成功">
+<hr>
+<h2 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h2><p>接下来迫不及待地打开你的sac吧。如果你是新手，可以尝试着输入下面的语句来了解它。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sac&gt; fg seis</span><br><span class="line">sac&gt; p</span><br><span class="line">sac&gt; xlim 10 14</span><br><span class="line">sac&gt; p</span><br><span class="line">sac&gt; exit</span><br></pre></td></tr></table></figure>
+<img src="/2018/01/30/如何在Linux中p安装和配置SAC（Seismic-Analysis-code/2.JPG" title="图形窗口">
+<hr>
+<p>至此，sac的安装已经结束，希望以上内容能够对你有所帮助。</p>
+
       
     </div>
     
@@ -374,160 +404,38 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/29/我的第一篇博客/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wang Longtan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="My Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/29/我的第一篇博客/" itemprop="url">我的第一篇博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-29T17:31:54+08:00">
-                2018-01-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/杂谈/" itemprop="url" rel="index">
-                    <span itemprop="name">杂谈</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/SAC/" rel="tag"># SAC</a>
           
-
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p>Hello Github World！<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/29/我的第一篇博客/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/29/我的第一篇博客/" rel="next" title="我的第一篇博客">
+                <i class="fa fa-chevron-left"></i> 我的第一篇博客
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -537,10 +445,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -548,6 +457,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -568,8 +481,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -629,6 +551,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#申请SAC"><span class="nav-number">1.</span> <span class="nav-text">申请SAC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置安装环境与安装"><span class="nav-number">2.</span> <span class="nav-text">配置安装环境与安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动SAC"><span class="nav-number">3.</span> <span class="nav-text">启动SAC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单使用"><span class="nav-number">4.</span> <span class="nav-text">简单使用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -761,11 +699,32 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
 
 
@@ -818,43 +777,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config("");
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="custom_mathjax_source">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
   
 
 
